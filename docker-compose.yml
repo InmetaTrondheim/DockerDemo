@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+
+  website:
+    container_name: 'website'
+    image: 'website'
+    build:
+      context: .
+      dockerfile: website\Dockerfile
+    ports:
+     - "80:8081"
+    networks:
+      - app-network
+
+  webapi:
+    container_name: 'webapi'
+    image: webapi
+    build:
+      context: .
+      dockerfile: webapi\Dockerfile
+    depends_on:
+     - "postgres"
+    networks:
+      - app-network
+
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
