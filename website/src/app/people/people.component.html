@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th >Name</th>
+        <th >Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-secondary my-3" (click)="onAdd()" >Add person</button>
+</div>

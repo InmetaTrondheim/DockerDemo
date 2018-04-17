@@ -1,0 +1,14 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" >
+      <div class="form-group">
+          <label for="nameInput">Name</label>
+          <input name="a1" type="text" class="form-control" id="nameInput" [(ngModel)]="name" >
+      </div>
+      <div class="form-group" >
+          <label for="ageInput">Age</label>
+          <input name="a2" type="number" class="form-control"  id="ageInput" [(ngModel)]="age">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
